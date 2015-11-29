@@ -1,18 +1,21 @@
 AppParent = React.createClass({
 
   getDefaultProps() {
+
     return {
       idSrc: 'https://appsheettest1.azurewebsites.net/sample/art'
     }
   },
 
   getInitialState() {
+
     return {
       artList: []
     }
   },
 
   componentDidMount() {
+
     let url = this.props.idSrc;
 
     $.get(url, function(data) {
@@ -32,6 +35,7 @@ AppParent = React.createClass({
   },
 
   render() {
+
     if (this.state.artList) {
       artItems = this.state.artList.map(function(item) {
 
@@ -42,7 +46,7 @@ AppParent = React.createClass({
     }
 
     return (
-      <ul>{artItems}</ul>
+      <section id='artList'>{artItems}</section>
     );
   }
 });

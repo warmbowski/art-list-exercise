@@ -1,6 +1,7 @@
 ArtPiece = React.createClass({
 
   getDefaultProps() {
+
     return {
       artId: '',
       idSrc: 'https://appsheettest1.azurewebsites.net/sample/art'
@@ -8,12 +9,14 @@ ArtPiece = React.createClass({
   },
 
   getInitialState() {
+
     return {
 
     }
   },
 
   componentDidMount() {
+
     let url = this.props.idSrc + '/' + this.props.artId;
 
     $.get(url, function(data) {
@@ -28,25 +31,17 @@ ArtPiece = React.createClass({
   },
 
   render() {
-    let artHTML = '';
+
     if (this.state.artInfo) {
-      artHTML = (
-        <ul>
-          <li>{this.state.artInfo.id}</li>
-          <li>{this.state.artInfo.artist}</li>
-          <li>{this.state.artInfo.title}</li>
-          <li>{this.state.artInfo.medium}</li>
-          <li>{this.state.artInfo.thumbnailUrl}</li>
-          <li>{this.state.artInfo.url}</li>
-        </ul>
-      );
+
       return (
-        <li>
+        <div id='artItem'>
           <img src={this.state.artInfo.thumbnailUrl}/>
-          {artHTML}
-        </li>
+          <ArtPieceInfo artInfo={this.state.artInfo}/>
+        </div>
       );
     }
-    return <li></li>;
+    
+    return <div></div>;
   }
 });
