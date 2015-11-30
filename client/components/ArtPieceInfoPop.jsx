@@ -16,7 +16,7 @@ ArtPieceInfoPop = React.createClass({
 
     return (
       <ul style={ulStyle}>
-        <li className='title'>{this.props.artInfo.title}</li>
+        <li className='title'>{this.props.artInfo.title.replace(/\?/g, '\'')}</li>
         <li className='medium'>{this.props.artInfo.medium}</li>
         <li className='artist'>{artistName}</li>
       </ul>
