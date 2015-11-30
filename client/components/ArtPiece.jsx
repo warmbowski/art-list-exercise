@@ -61,8 +61,6 @@ ArtPiece = React.createClass({
     }
   },
 
-
-
   render() {
 
     if (this.state.artInfo) {

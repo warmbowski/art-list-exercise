@@ -51,12 +51,18 @@ section div ul {
   list-style: none;
 }
 
-/*@media screen and (max-width: 420px) {
-  section div {
-    max-width: 420px;
-    min-width: 200px;
-  }
-}*/
+li.title {
+  font-size: 1.4em;
+}
+
+li.medium {
+  font-size: 1em;
+  color: lightgray;
+}
+
+li.artist {
+  font-size: 1em;
+}
 
 @media screen and (max-width: 420px) {
   h2 { align-self: center; }

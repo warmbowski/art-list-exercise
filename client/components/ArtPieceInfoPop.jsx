@@ -8,15 +8,17 @@ ArtPieceInfoPop = React.createClass({
   },
 
   render() {
+    let artistName = this.props.artInfo.artist.split(', ').reverse().join(' ');
+
     let ulStyle = {
       visibility: 'hidden'
     };
 
     return (
       <ul style={ulStyle}>
-        <li>{this.props.artInfo.title}</li>
-        <li>{this.props.artInfo.medium}</li>
-        <li>{this.props.artInfo.artist}</li>
+        <li className='title'>{this.props.artInfo.title}</li>
+        <li className='medium'>{this.props.artInfo.medium}</li>
+        <li className='artist'>{artistName}</li>
       </ul>
     );
   }
