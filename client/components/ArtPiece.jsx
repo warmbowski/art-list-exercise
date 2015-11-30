@@ -10,9 +10,7 @@ ArtPiece = React.createClass({
 
   getInitialState() {
 
-    return {
-
-    }
+    return {}
   },
 
   componentDidMount() {
@@ -24,24 +22,38 @@ ArtPiece = React.createClass({
 
       if (this.isMounted()) {
         this.setState({
+          showInfo: false,
           artInfo: artInfo
         });
       }
     }.bind(this));
   },
 
+  handleMouseOver() {
+    let el = ReactDOM.findDOMNode(this);
+    el.lastElementChild.style.visibility = 'visible';
+  },
+
+  handleMouseOut() {
+    let el = ReactDOM.findDOMNode(this);
+    el.lastElementChild.style.visibility = 'hidden';
+  },
+
   render() {
 
     if (this.state.artInfo) {
-
       return (
-        <div id='artItem'>
+        <div
+          id='artItem'
+          onMouseOver={this.handleMouseOver}
+          onMouseOut={this.handleMouseOut}
+        >
           <img src={this.state.artInfo.thumbnailUrl}/>
-          <ArtPieceInfo artInfo={this.state.artInfo}/>
+          <ArtPieceInfoPop artInfo={this.state.artInfo}/>
         </div>
       );
     }
-    
+
     return <div></div>;
   }
 });

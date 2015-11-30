@@ -22,7 +22,7 @@ AppParent = React.createClass({
       // let artList = data;
 
       let artList = [];
-      for (var i = 0; i < 10; i+=1) {
+      for (var i = 0; i < 25; i+=1) {
         artList.push(data[i]);
       }
 

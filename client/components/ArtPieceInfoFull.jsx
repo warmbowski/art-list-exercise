@@ -10,6 +10,7 @@ ArtPieceInfo = React.createClass({
   render() {
     return (
       <ul>
+        <li><img src={this.props.artInfo.url}/></li>
         <li>{this.props.artInfo.id}</li>
         <li>{this.props.artInfo.artist}</li>
         <li>{this.props.artInfo.title}</li>
