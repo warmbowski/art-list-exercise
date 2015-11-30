@@ -4,27 +4,31 @@
 **/
 
 body {
+  font-family: sans-serif;
+  color: whitesmoke;
   margin: 0; background: #333;
 }
 
+h1 {
+  font-family: cursive;
+  font-size: 3em;
+}
+
 section {
-  padding: 0.5vw;
-  /*font-size: 0;*/
-  display: -ms-flexbox;
-  -ms-flex-wrap: wrap;
-  -ms-flex-direction: column;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  padding: 0.5vw;
 }
 
 section div {
   position: relative;
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
+  -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
+  max-width: 300px;
   margin: 0.5vw;
   overflow-y: hidden;
 }
@@ -47,8 +51,19 @@ section div ul {
   list-style: none;
 }
 
-@media screen and (max-width: 400px) {
-  section div { margin: 0; }
-  section { padding: 0; }
+/*@media screen and (max-width: 420px) {
+  section div {
+    max-width: 420px;
+    min-width: 200px;
+  }
+}*/
 
+@media screen and (max-width: 420px) {
+  h2 { align-self: center; }
+  section div {
+    max-width: 420px;
+    min-width: 200px;
+    margin: 0;
+  }
+  section { padding: 0; }
 }

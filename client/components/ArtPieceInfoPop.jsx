@@ -13,7 +13,7 @@ ArtPieceInfoPop = React.createClass({
     };
 
     return (
-      <ul className='info-pop' style={ulStyle}>
+      <ul style={ulStyle}>
         <li>{this.props.artInfo.title}</li>
         <li>{this.props.artInfo.medium}</li>
         <li>{this.props.artInfo.artist}</li>

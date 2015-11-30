@@ -29,24 +29,51 @@ ArtPiece = React.createClass({
     }.bind(this));
   },
 
-  handleMouseOver() {
+  handleMouseOver(evt) {
+    evt.preventDefault();
     let el = ReactDOM.findDOMNode(this);
     el.lastElementChild.style.visibility = 'visible';
   },
 
-  handleMouseOut() {
+  handleMouseOut(evt) {
+    evt.preventDefault();
     let el = ReactDOM.findDOMNode(this);
     el.lastElementChild.style.visibility = 'hidden';
   },
+
+  handleTouchStart(evt) {
+    this.state.dragging = false;
+  },
+
+  handleTouchMove(evt) {
+    this.state.dragging = true;
+  },
+
+  handleTouchEnd(evt) {
+    evt.preventDefault();
+    if (!this.state.dragging) {
+      let el = ReactDOM.findDOMNode(this);
+      if (el.lastElementChild.style.visibility === 'hidden') {
+        el.lastElementChild.style.visibility = 'visible';
+      } else {
+        el.lastElementChild.style.visibility = 'hidden';
+      }
+    }
+  },
+
+
 
   render() {
 
     if (this.state.artInfo) {
       return (
         <div
-          id='artItem'
+          className='artItem'
           onMouseOver={this.handleMouseOver}
           onMouseOut={this.handleMouseOut}
+          onTouchStart={this.handleTouchStart}
+          onTouchMove={this.handleTouchMove}
+          onTouchEnd={this.handleTouchEnd}
         >
           <img src={this.state.artInfo.thumbnailUrl}/>
           <ArtPieceInfoPop artInfo={this.state.artInfo}/>
