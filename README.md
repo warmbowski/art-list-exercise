@@ -10,3 +10,10 @@ git clone https://github.com/warmbowski/art-list-exercise.git
 cd art-list-exercise
 meteor run
 ```
+
+### Roadmap
+* So far, only the thumbnails and a metadata pop-over has been created. The plan is to have a modal lightbox for displaying the full size image with full metadata.
+* Add some transition:
+  * fade-in for loading of image list
+  * pop-over show/hide
+  * modal lightbox show/hide
