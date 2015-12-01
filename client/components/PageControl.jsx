@@ -16,7 +16,7 @@ PageControl = React.createClass({
 
     return (
       <nav>
-        <button id='begin' onClick={this.props.beginClick}>&lt;&lt;&#8810begin</button>
+        <button id='begin' onClick={this.props.beginClick}>&lt;&lt;begin</button>
         <button id='prev' onClick={this.props.prevClick}>&lt;prev</button>&nbsp;
         <button id='next' onClick={this.props.nextClick}>next&gt;</button>
         <button id='end' onClick={this.props.endClick}>end&gt;&gt;</button>
