@@ -20,12 +20,12 @@ ArtList = React.createClass({
     let url = this.props.idSrc;
 
     $.get(url, function(data) {
-      //let artList = data;
+      let artList = data;
 
-      let artList = [];
-      for (var i = 0; i < 105; i+=1) {
-        artList.push(data[i]);
-      }
+      // let artList = [];
+      // for (var i = 0; i < 105; i+=1) {
+      //   artList.push(data[i]);
+      // }
 
       if (this.isMounted()) {
         this.setState({
