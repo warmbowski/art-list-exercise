@@ -22,6 +22,7 @@ ArtList = React.createClass({
     $.get(url, function(data) {
       let artList = data;
 
+      // ** for testing with a subset of data **
       // let artList = [];
       // for (var i = 0; i < 105; i+=1) {
       //   artList.push(data[i]);
@@ -93,7 +94,7 @@ ArtList = React.createClass({
         );
       });
     } else {
-      artItems = [];
+      artItems = null;
     }
 
     return (
