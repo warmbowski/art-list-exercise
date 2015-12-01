@@ -58,13 +58,14 @@ ArtPiece = React.createClass({
 
   handleTouchEnd(evt) {
     evt.preventDefault();
+    let el = ReactDOM.findDOMNode(this);
     if (this.state.touch2 && this.state.touch2 - this.state.touch1 <= 500) {
       //alert('double touch');
+      el.lastElementChild.style.visibility = 'hidden';
       this.handleDoubleClick(evt);
       this.state.touch1 = this.state.touch2 = null;
     } else {
       if (!this.state.dragging) {
-        let el = ReactDOM.findDOMNode(this);
         if (el.lastElementChild.style.visibility === 'hidden') {
           el.lastElementChild.style.visibility = 'visible';
         } else {
