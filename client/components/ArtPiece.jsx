@@ -76,7 +76,12 @@ ArtPiece = React.createClass({
   },
 
   handleDoubleClick(evt) {
-    this.state.showFullInfo = true;
+
+    if (this.state.showFullInfo === true) {
+      this.state.showFullInfo = false;
+    } else {
+      this.state.showFullInfo = true;
+    }
     this.forceUpdate();
   },
 

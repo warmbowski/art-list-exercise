@@ -33,13 +33,15 @@ ArtPieceInfoFull = React.createClass({
         <li>Artist: {this.props.artInfo.artist}</li>
         <li>Title: {this.props.artInfo.title}</li>
         <li>Medium: {this.props.artInfo.medium}</li>
-        <li>Image:
-          <a href={this.props.artInfo.thumbnailUrl}>
+        <li>
+          Image:&nbsp;
+          <a href={this.props.artInfo.thumbnailUrl} target='_blank'>
             {this.props.artInfo.thumbnailUrl}
           </a>
         </li>
-        <li>URL:
-          <a href={this.props.artInfo.url}>
+        <li>
+          URL:&nbsp;
+          <a href={this.props.artInfo.url} target='_blank'>
             {this.props.artInfo.url}
           </a>
         </li>
