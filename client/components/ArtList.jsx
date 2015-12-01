@@ -110,6 +110,15 @@ ArtList = React.createClass({
         <section id='artList'>
           {artItems}
         </section>
+        <PageControl
+          start={this.state.pageStart}
+          count={this.props.perPage}
+          length={this.state.artList.length}
+          beginClick={this.handleBeginClick}
+          prevClick={this.handlePrevClick}
+          nextClick={this.handleNextClick}
+          endClick={this.handleEndClick}
+        />
     </div>
     );
   }
