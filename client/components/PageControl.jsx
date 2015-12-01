@@ -11,9 +11,9 @@ PageControl = React.createClass({
 
     let end = this.props.start + this.props.count;
     if (this.props.start + this.props.count > this.props.length) {
-      end = ths.props.length;
+      end = this.props.length;
     }
-    
+
     return (
       <nav>
         <button id='begin' onClick={this.props.beginClick}>begin</button>
