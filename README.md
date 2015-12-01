@@ -1,6 +1,6 @@
 # Art List Exercise
 
-Web app built with React components to retrieve an array of IDs and then to retrieve the metadata for each ID and render images and metadata in a an interesting way.
+Web app built with React components to retrieve an array of IDs and then to retrieve the metadata for each ID and render images and metadata in a an interesting way. Test deploy at http://art-list-exercise.meteor.com/
 
 Application was built using Meteor with React package. To run the web app install Meteor, clone repo, and run meteor from within the project folder.
 
