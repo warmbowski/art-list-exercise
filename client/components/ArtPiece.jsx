@@ -24,7 +24,8 @@ ArtPiece = React.createClass({
         this.setState({
           showInfo: false,
           artInfo: artInfo,
-          showFullInfo: false
+          showFullInfo: false,
+          divStyle: {}
         });
       }
     }.bind(this));
@@ -77,17 +78,26 @@ ArtPiece = React.createClass({
 
   handleDoubleClick(evt) {
 
+    let hash = evt.target.id;
     if (this.state.showFullInfo === true) {
       this.state.showFullInfo = false;
+      this.state.divStyle = {};
+      location.hash = '_';
     } else {
       this.state.showFullInfo = true;
+      this.state.divStyle = {
+        flex: '5 0 auto',
+        minWidth: '50%',
+        border: '3px solid red'
+      };
+      location.hash = '#' + hash;
     }
     this.forceUpdate();
   },
 
   handleInfoClose(evt) {
-    this.state.showFullInfo = false;
-    this.forceUpdate();
+
+    this.handleDoubleClick(evt);
   },
 
   render() {
@@ -103,7 +113,9 @@ ArtPiece = React.createClass({
 
       return (
         <div
-          className='artItem'
+          id={this.state.artInfo.id}
+          className='art-item'
+          style={this.state.divStyle}
           onMouseOver={this.handleMouseOver}
           onMouseOut={this.handleMouseOut}
           onTouchStart={this.handleTouchStart}
@@ -112,7 +124,7 @@ ArtPiece = React.createClass({
           onDoubleClick={this.handleDoubleClick}
         >
           {fullInfo}
-          <img src={this.state.artInfo.thumbnailUrl}/>
+          <img id={this.state.artInfo.id} src={this.state.artInfo.thumbnailUrl}/>
           <ArtPieceInfoPop artInfo={this.state.artInfo}/>
         </div>
       );

@@ -101,7 +101,7 @@ ArtList = React.createClass({
           nextClick={this.handleNextClick}
           endClick={this.handleEndClick}
         />
-        <section id='artList'>
+      <section id='art-list'>
           {artItems}
         </section>
         <PageControl

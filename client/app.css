@@ -18,7 +18,7 @@ a {
   color: whitesmoke;
 }
 
-section {
+section#art-list {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   display: -webkit-flex;
@@ -26,12 +26,13 @@ section {
   -webkit-align-items: center;
   align-items: center;
   padding: 0.5vw;
+  padding-bottom: 100px;
 }
 
 section div {
   position: relative;
-  -webkit-flex: 1 1 250px;
-  flex: 1 1 250px;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
   max-width: 300px;
   margin: 0.5vw;
   overflow: hidden;
@@ -72,7 +73,7 @@ li.artist {
   h2 { align-self: center; }
   section div {
     max-width: 420px;
-    min-width: 200px;
+    min-width: 100%;
     margin: 0;
   }
   section { padding: 0; }
