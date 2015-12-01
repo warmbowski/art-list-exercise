@@ -100,6 +100,7 @@ ArtPiece = React.createClass({
     }
 
     if (this.state.artInfo) {
+
       return (
         <div
           className='artItem'
@@ -117,6 +118,6 @@ ArtPiece = React.createClass({
       );
     }
 
-    return <div></div>;
+    return null;
   }
 });

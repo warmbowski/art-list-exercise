@@ -22,12 +22,6 @@ ArtList = React.createClass({
     $.get(url, function(data) {
       let artList = data;
 
-      // ** for testing with a subset of data **
-      // let artList = [];
-      // for (var i = 0; i < 105; i+=1) {
-      //   artList.push(data[i]);
-      // }
-
       if (this.isMounted()) {
         this.setState({
           artList: artList,
@@ -82,6 +76,7 @@ ArtList = React.createClass({
 
   render() {
 
+    let artItems = null;
     if (this.state.artList.length > 0) {
       let pageStart = this.state.pageStart;
       let pageEnd = this.state.pageStart + this.props.perPage;
@@ -93,8 +88,6 @@ ArtList = React.createClass({
           <ArtPiece key={item} artId={item}/>
         );
       });
-    } else {
-      artItems = null;
     }
 
     return (
